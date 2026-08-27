@@ -99,7 +99,7 @@ class TclConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     self.hass, user_input[ACCOUNT_ID], user_input[REFRESH_TOKEN]
                 )
                 return self.async_create_entry(
-                    title="Tcl - {}".format(mobile),
+                    title="TCL HA X - {}".format(mobile),
                     data={'account': {
                         'login_method': LOGIN_METHOD_TOKEN,
                         'phone': '',
@@ -131,7 +131,7 @@ class TclConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     self.hass, user_input['phone'], user_input['password']
                 )
                 return self.async_create_entry(
-                    title="Tcl - {}".format(mobile),
+                    title="TCL HA X - {}".format(mobile),
                     data={'account': {
                         'login_method': LOGIN_METHOD_PASSWORD,
                         'phone': user_input['phone'],
@@ -184,7 +184,7 @@ class TclConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     self.hass, self._sms_phone, user_input['code']
                 )
                 return self.async_create_entry(
-                    title="Tcl - {}".format(mobile),
+                    title="TCL HA X - {}".format(mobile),
                     data={'account': {
                         'login_method': LOGIN_METHOD_SMS,
                         'phone': self._sms_phone,

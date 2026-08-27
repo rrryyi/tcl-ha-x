@@ -4,7 +4,7 @@ from typing import List
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 
-from custom_components.tcl.const import FILTER_TYPE_EXCLUDE, FILTER_TYPE_INCLUDE
+from custom_components.tcl_ha_x.const import FILTER_TYPE_EXCLUDE, FILTER_TYPE_INCLUDE
 
 
 class AccountConfig:
@@ -43,7 +43,7 @@ class AccountConfig:
     def save(self, mobile: str | None = None) -> None:
         self._hass.config_entries.async_update_entry(
             self._config,
-            title='TCL: {}'.format(mobile) if mobile else self._config.title,
+            title='TCL HA X: {}'.format(mobile) if mobile else self._config.title,
             data={
                 **self._config.data,
                 'account': {

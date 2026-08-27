@@ -266,7 +266,7 @@ class TclClient:
             return merged
 
         # 无本地 fallback：走缓存 + API 逻辑
-        store = Store(self._hass, 1, 'tcl/device_{}.json'.format(device.id))
+        store = Store(self._hass, 1, 'tcl_ha_x/device_{}.json'.format(device.id))
         cache = None
         try:
             cache = await store.async_load()

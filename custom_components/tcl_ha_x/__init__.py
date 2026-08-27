@@ -25,7 +25,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     await try_update_token(hass, entry)
     # 定时更新token
     token_signal = threading.Event()
-    hass.async_create_background_task(token_updater(hass, entry, token_signal), 'tcl-token-updater')
+    hass.async_create_background_task(token_updater(hass, entry, token_signal), 'tcl_ha_x-token-updater')
     hass.data[DOMAIN]['signals'].append(token_signal)
 
     account_cfg = AccountConfig(hass, entry)
@@ -37,11 +37,11 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
 
     # 监听设备数据
     device_signal = threading.Event()
-    hass.async_create_background_task(client.listen_devices(devices, device_signal), 'tcl-device-data')
+    hass.async_create_background_task(client.listen_devices(devices, device_signal), 'tcl_ha_x-device-data')
     hass.data[DOMAIN]['signals'].append(device_signal)
     #轮训获取数据,已废弃
     # device_updater_signal = threading.Event()
-    # hass.async_create_background_task(data_updater(hass,account_cfg,client,devices,device_updater_signal), 'tcl-device-data-updater')
+    # hass.async_create_background_task(data_updater(hass,account_cfg,client,devices,device_updater_signal), 'tcl_ha_x-device-data-updater')
     # hass.data[DOMAIN]['signals'].append(device_updater_signal)
 
     await hass.config_entries.async_forward_entry_setups(entry, SUPPORTED_PLATFORMS)
@@ -125,7 +125,7 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry):
 
 
 async def entry_update_listener(hass: HomeAssistant, entry: ConfigEntry) -> None:
-    _LOGGER.debug('reload tcl integration...')
+    _LOGGER.debug('reload tcl_ha_x integration...')
     await hass.config_entries.async_reload(entry.entry_id)
 
 

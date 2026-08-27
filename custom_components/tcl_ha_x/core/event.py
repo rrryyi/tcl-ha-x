@@ -2,7 +2,7 @@ from typing import Callable, Coroutine, Any
 
 from homeassistant.core import HomeAssistant, CALLBACK_TYPE, Event
 
-from custom_components.tcl import DOMAIN
+from custom_components.tcl_ha_x import DOMAIN
 
 EVENT_DEVICE_CONTROL = 'device_control'
 EVENT_DEVICE_DATA_CHANGED = 'device_data_changed'

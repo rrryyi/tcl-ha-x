@@ -1,0 +1,20 @@
+{
+  "domain": "tcl_ha_x",
+  "name": "TCL HA X",
+  "version": "0.1.0",
+  "documentation": "https://github.com/rrryyi/tcl-ha-x",
+  "issue_tracker": "https://github.com/rrryyi/tcl-ha-x/issues",
+  "config_flow": true,
+  "integration_type": "hub",
+  "iot_class": "cloud_push",
+  "requirements": [
+    "paho-mqtt"
+  ],
+  "dependencies": [],
+  "loggers": [
+    "custom_components.tcl_ha_x"
+  ],
+  "codeowners": [
+    "@rrryyi"
+  ]
+}

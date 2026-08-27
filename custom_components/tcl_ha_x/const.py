@@ -1,6 +1,6 @@
 from homeassistant.const import Platform
 
-DOMAIN = 'tcl'
+DOMAIN = 'tcl_ha_x'
 
 SUPPORTED_PLATFORMS = [
     Platform.SELECT,

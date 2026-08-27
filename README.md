@@ -1,6 +1,7 @@
-# TCL 空调 Home Assistant 集成
+# TCL HA X
 
-本集成以 [ndwzy/tcl-ha](https://github.com/ndwzy/tcl-ha) 为基础，并参考
+`tcl_ha_x` 是一个新的 Home Assistant 自定义集成，以
+[ndwzy/tcl-ha](https://github.com/ndwzy/tcl-ha) 为基础，并参考
 [qwqqq6/tclplus-ac](https://github.com/qwqqq6/tclplus-ac) 的国内 TCL+ 属性和
 控制规则做了增强，目标是减少重复实体，并让只读状态属性不再被误判成开关。
 
@@ -26,13 +27,13 @@
 
 ## 安装
 
-将 `custom_components/tcl` 复制到 Home Assistant 配置目录下的
+将 `custom_components/tcl_ha_x` 复制到 Home Assistant 配置目录下的
 `custom_components` 中，然后重启 Home Assistant。
 
 ```text
 config/
   custom_components/
-    tcl/
+    tcl_ha_x/
       manifest.json
       __init__.py
       ...
@@ -43,7 +44,7 @@ config/
 ## 配置
 
 1. 打开“设置 -> 设备与服务”。
-2. 点击“添加集成”，搜索 `TCL`。
+2. 点击“添加集成”，搜索 `TCL HA X`。
 3. 选择 Token、密码或短信验证码登录。
 4. 登录后选择需要接入的设备和实体。
 
@@ -55,7 +56,7 @@ config/
 logger:
   default: warn
   logs:
-    custom_components.tcl: debug
+    custom_components.tcl_ha_x: debug
 ```
 
 ## 说明
